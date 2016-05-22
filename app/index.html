@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轻应用－任务</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- bower:css -->
+    <!-- endbower -->
+	<link rel="stylesheet" href="plugin/seedsui/seedsui.min.css">
+    <link rel="stylesheet" href="plugin/animate/animate.css">
+    <!-- build:css css/index.css -->
+	<link rel="stylesheet" href="css/index.css">
+    <!-- endbuild -->
+</head>
+<body>
+	<section id="pageSignList" class="active">
+		<header>
+            <div class="titlebar" style="z-index:99;">
+                <a class="left" href="javascript:history.go(-1)">
+                    <i class="icon-arrowleft"></i>
+                    <span>返回</span>
+                </a>
+                <h1 class="text-center">任务列表</h1>
+                <a href="task-create.html" class="right">
+                    <i class="icon-rdoadd"></i>
+                </a>
+            </div>
+            <ul class="tabbar animate-oneline" id="tabbar">
+                <li class="tab active">
+                    <label class="tab-label">未完成的</label>
+                </li>
+                <li class="tab">
+                    <label class="tab-label">已完成的</label>
+                </li>
+                <li class="tab">
+                    <label class="tab-label">我指派的</label>
+                </li>
+            </ul>
+        </header>
+        <article style="top:100px;bottom:0px;">
+             <div class="slider-container" id="carouselPage" style="height:100%;">
+                <div class="slider-wrapper">
+                    <!-- 第一页 -->
+                    <div class="slider-slide" id="page1"> 
+                        <div class="no-data box box-middlecenter"><!--暂无数据-->
+                            <div class="nodata-content" hidden>
+                                <img src="img/icon/no-data.png">
+                                <br>
+                                暂无任务，快去创建一个吧！
+                            </div> 
+                        </div>
+                        <div class="selectbox">
+                            <div class="triangle"></div>
+                                <select class="select1">
+                                    <option>创建时间</option>
+                                    <option>截止时间</option>
+                                </select>
+                        </div>
+                        <ul class="time-list">
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-03</div>
+                            </li>
+                            <li class="cont">    
+                                <a href="task-detail.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Amy</div>
+                                        <div class="cont-tip">
+                                            <span class="cont-tip-new new1">new</span>
+                                        </div>
+                                        <div class="time">创建时间：2016-03-11 17:30</div>
+                                        <div class="content">文档完成输出,原型及效果图设计,逻...</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cont">
+                                <a href="task-detail.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Tony</div>
+                                        <div class="cont-tip">
+                                            <span class="cont-tip-new new1">new</span>
+                                        </div>
+                                        <div class="time">创建时间：2016-03-01 10:30</div>
+                                        <div class="content">出差</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-02</div>
+                            </li>
+                            <li class="cont pass">    
+                                <a href="task-timeout-wei.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name" style="font-size:13px;">王小琪</div>
+                                        <div class="cont-tip">
+                                            <span class="cont-tip-new">过期</span>                           
+                                        </div>
+                                        <div class="time">创建时间：2016-02-19 10:30</div>
+                                        <div class="content">出差</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-01</div>
+                            </li>
+                            <li class="cont">   
+                                <a href="task-detail.html" class="task-a"> 
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Cindy</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new">new</span>                          
+                                        </div>
+                                        <div class="time">创建时间：2016-01-11 15:45</div>
+                                        <div class="content">研发配合,测试逻辑</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cont">
+                                <a href="task-detail.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Tony</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new">new</span>                          
+                                        </div>
+                                        <div class="time">创建时间：2016-01-08 09:10</div>
+                                        <div class="content">研发配合,测试逻辑</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 第二页 -->
+                    <div class="slider-slide" id="page2"> 
+                        <div class="no-data box box-middlecenter"><!--暂无数据-->
+                            <div class="nodata-content" hidden>
+                                <img src="img/icon/no-data.png">
+                                <br>
+                                暂无任务，快去创建一个吧！
+                            </div> 
+                        </div>
+                        <div class="selectbox">
+                            <div class="triangle"></div>
+                                <select class="select1 fin">
+                                    <option>创建时间</option>
+                                    <option>截止时间</option>
+                                    <option>已完成时间</option>
+                                </select>
+                        </div>
+                        <ul class="time-list">
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-03</div>
+                            </li>
+                            <li class="cont">   
+                                <a href="task-detail-yi.html" class="task-a"> 
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name" style="font-size:13px;">李潇</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new new1"></span>
+                                        </div>
+                                        <div class="time">创建时间：2016-03-11 17:30</div>
+                                        <div class="content">文档完成输出,原型及效果图设计,逻...</div>
+                                    </div>
+                                </a>
+                            </li>
+                             <li class="cont pass">   
+                                <a href="task-timeout-yi.html" class="task-a"> 
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Tony</div>
+                                        <div class="cont-tip">
+                                            <span class="cont-tip-new">过期</span>                           
+                                        </div>
+                                        <div class="time">创建时间：2016-02-19 10:30</div>
+                                        <div class="content">出差</div>
+                                    </div>
+                                </a>
+                            </li>
+                             <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-02</div>
+                            </li>
+                            <li class="cont">    
+                                <a href="task-detail-yi.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name" style="font-size:13px;">王小琪</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new"></span>                           
+                                        </div>
+                                        <div class="time">创建时间：2016-02-19 10:30</div>
+                                        <div class="content">效果图确认</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-01</div>
+                            </li>
+                            <li class="cont">  
+                                <a href="task-detail-yi.html" class="task-a">  
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Cindy</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new"></span>                          
+                                        </div>
+                                        <div class="time">创建时间：2016-01-11 15:45</div>
+                                        <div class="content">研发配合,测试逻辑</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cont">
+                                <a href="task-detail-yi.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Tony</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new"></span>                          
+                                        </div>
+                                        <div class="time">创建时间：2016-01-08 09:10</div>
+                                        <div class="content">研发配合,测试逻辑</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 第三页 -->
+                    <div class="slider-slide" id="page3"> 
+                        <div class="no-data box box-middlecenter"><!--暂无数据-->
+                            <div class="nodata-content" hidden>
+                                <img src="img/icon/no-data.png">
+                                <br>
+                                暂无任务，快去创建一个吧！
+                            </div> 
+                        </div>
+                        <div class="selectbox">
+                            <div class="triangle"></div>
+                            <select class="select1 fin">
+                                <option>创建时间</option>
+                                <option>截止时间</option>
+                                <option>已完成时间</option>
+                            </select>
+                        </div>
+                        <ul class="time-list">
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-03</div>
+                            </li>
+                            <li class="cont">    
+                                <a href="task-detail-zhi.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name" style="font-size:13px;">李潇</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new new1"></span>
+                                        </div>
+                                        <div class="time">创建时间：2016-03-11 17:30</div>
+                                        <div class="content">文档完成输出,原型及效果图设计,逻...</div>
+                                    </div>
+                                </a>
+                            </li>
+                             <li class="cont pass">    
+                                <a href="task-timeout-zhi.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Tony</div>
+                                        <div class="cont-tip">
+                                            <span class="cont-tip-new">过期</span>                           
+                                        </div>
+                                        <div class="time">创建时间：2016-02-19 10:30</div>
+                                        <div class="content">出差</div>
+                                    </div>
+                                </a>
+                            </li>
+                             <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-02</div>
+                            </li>
+                            <li class="cont">   
+                                <a href="task-detail-zhi.html" class="task-a"> 
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name" style="font-size:13px;">王小琪</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new"></span>                           
+                                        </div>
+                                        <div class="time">创建时间：2016-02-19 10:30</div>
+                                        <div class="content">效果图确认</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="time-total">
+                                <i class="icon-rdochecked-fill" style="float:left;color:#36ac72;margin-left:8px;"></i>
+                                <div class="task-p">2016-01</div>
+                            </li>
+                            <li class="cont"> 
+                                <a href="task-detail-zhi.html" class="task-a">   
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Cindy</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new"></span>                          
+                                        </div>
+                                        <div class="time">创建时间：2016-01-11 15:45</div>
+                                        <div class="content">研发配合,测试逻辑</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cont">
+                                <a href="task-detail-zhi.html" class="task-a">
+                                    <div class="circle1"></div>
+                                    <div class="part">
+                                        <div class="name">Tony</div>
+                                        <div class="cont-tip old">
+                                            <span class="cont-tip-new"></span>                          
+                                        </div>
+                                        <div class="time">创建时间：2016-01-08 09:10</div>
+                                        <div class="content">研发配合,测试逻辑</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+	</section>
+    <!-- <script src="plugin/jquery/jquery.min.js"></script> -->
+    <!-- build:js js/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="plugin/seedsui/seedsui.min.js"></script>
+    <script>
+    var tabbar=document.getElementById("tabbar");
+    var tab=tabbar.querySelectorAll(".tab");
+    var carouselPage;
+    function initSlider(){
+        carouselPage=new Slider("#carouselPage",{
+            "onSlideChangeEnd":function(e){
+                tabActive(e.index);
+            }
+        });
+    }
+    //选中tab
+    function tabActive(index){
+        for(var i=0,t;t=tab[i++];){
+            t.classList.remove("active");
+        }
+        tab[index].classList.add("active");
+    }
+    //绑定tab点击事件
+    function tabBindClick(){
+        for(var i=0,t;t=tab[i++];){
+            (function(i){
+                t.addEventListener("click",function(){
+                    carouselPage.slideTo(i-1);
+                    tabActive(i-1);
+                },false);
+            })(i);
+        }
+    }
+
+
+    //lazyload img
+    function lazyloadImg(){
+        $("[data-src]").each(function(){
+            (function(s){
+                var img=document.createElement("img");
+                img.setAttribute("src",$(s).data('src'));
+                img.onload=function(){
+                    $(s).attr('src', $(s).data('src'));
+                }
+            })(this);
+        });
+    }
+
+
+    //clear input function
+    function clearInput(){
+        [].slice.call(document.querySelectorAll('.clear-input')).forEach(function(clearBtn){
+            var input = clearBtn.previousElementSibling;
+            clearCurrent = function(ev) {
+                ev.preventDefault();
+                input.value="";
+            };
+            clearBtn.addEventListener('click',clearCurrent);
+        });
+    }
+
+
+    //滚动到底部加载 function
+    function loadMore(container, callback) {
+        var wrapper = document.getElementById(container)
+        wrapper.onscroll=function(e){
+            var contentHeight=wrapper.scrollHeight;
+            var wrapperHeight=wrapper.clientHeight;
+            var scrollAmount = wrapper.scrollTop;
+            //console.log(contentHeight+" - "+wrapperHeight+" - "+scrollAmount);
+            if (scrollAmount+wrapperHeight == contentHeight){
+                var loadDiv = wrapper.querySelector(".load-more");
+                //loadDiv.style.visibility = "visible";
+                callback();
+            }
+        }
+    }
+    function loadPage1(){
+        //console.log(1);
+        //page1 加载 ajax 写这里
+    }
+    function loadPage2(){
+        //console.log(2);
+        //page1 加载 ajax 写这里
+    }
+    
+    //card 有关操作
+    var delcardid;
+    var popup = $("#popDelete");
+    var pageMaxCount = 4;
+    function hideLoadDiv(containerID){
+        var container =$("#"+containerID)
+        var cardLength=container.find(".card").length;
+        console.log(cardLength);
+        //这里去服务器获取数据再加一条进来
+        if (cardLength <= pageMaxCount && cardLength > 0) {
+            container.find(".load-more").hide();
+        } else if (cardLength == 0){
+            container.find(".no-data").removeClass("hidden");
+        }
+    }
+    //删除 card function   
+    popup.find(".cancel-btn").on("click",function(){
+        //取消关闭窗口
+        popup.hideDialog();
+    });
+    popup.find(".confirm-btn").on("click",function(){
+        //确认删除card
+        var card = $("#"+delcardid);
+        card.addClass("animated zoomOut");
+        EventUtil.addHandler(card[0], "animationend", function(){
+            card.slideUp(300, function(){
+                card.remove();
+                hideLoadDiv("page2");
+            });
+            //card.remove();
+        });
+        popup.hideDialog();
+    });
+    
+    function deleteCard(){    
+        [].slice.call(document.querySelectorAll('.card')).forEach(function(card){
+            var deleteBtn = card.querySelector('.btn-delete');
+            console.log(deleteBtn);
+            if(deleteBtn){
+                deleteBtn.addEventListener("click",function(e){
+                    delcardid = card.id;
+                    popup.dialog();
+                    console.log(delcardid);
+                    e.stopPropagation();
+                },false);   
+            }
+        });
+    }
+
+    //初始化function
+    window.addEventListener("load",function(){
+        var drag=new Dragrefresh("#page1",{
+            "onRefresh":function(e){
+                setTimeout(function(){
+                    e.refreshComplete();
+                }, 1000);
+                
+            },
+            "onRefreshComplete":function(e){
+                //完成刷新逻辑
+            },
+            "onRefreshOvertime":function(e){
+                 //超时刷新逻辑
+            }
+        });
+        var drag2=new Dragrefresh("#page2",{
+            "onRefresh":function(e){
+                setTimeout(function(){
+                    e.refreshComplete();
+                }, 1000);
+                
+            },
+            "onRefreshComplete":function(e){
+                //完成刷新逻辑
+            },
+            "onRefreshOvertime":function(e){
+                //超时刷新逻辑
+            }
+        });
+        //search clear
+        clearInput();
+        initSlider();
+        tabBindClick();
+        lazyloadImg();
+        Animate.counter();
+        deleteCard();
+        loadMore('page1', loadPage1);
+        loadMore('page2', loadPage2);
+    },false);
+	</script>
+</body>
+</html>

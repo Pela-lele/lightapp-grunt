@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轻应用－任务</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="plugin/seedsui/seedsui.min.css">
+    <link rel="stylesheet" href="plugin/animate/animate.css">
+	<link rel="stylesheet" href="css/task-create.b3474e6b.css">
+</head>
+<body>
+	<section id="pageSignList" class="active">
+		<header>
+            <div class="titlebar" style="z-index:99;">
+                <a class="left" href="javascript:history.go(-1)">
+                    <i class="icon-arrowleft"></i>
+                    <span>返回</span>
+                </a>
+                <h1 class="text-center">创建任务</h1>
+            </div>
+        </header>
+        <article style="bottom:0px;">
+            <div class="blog">
+                <textarea maxlength="250" placeholder="请描述任务详情，250字以内..."></textarea>
+                <span class="count"><span class="num">0</span>/250</span>
+                <div class="details">
+                    <div class="show-imgs" style="background-image:url(img/icon/test.ba45c8f6.jpg)">               
+                        <span class="close">
+                            <i class="icon-close"></i>
+                        </span>
+                    </div>
+                    <div class="show-imgs new" id="actionsheet" style="background-image:url(img/icon/addimg.cfc58949.png)">
+                    </div>
+                </div>
+            </div> 
+            <ul>
+                <li class="executor one">
+                    <i class="icon-person-fill" style="color:#36ac72;line-height:45px;margin-left:15px"></i>
+                    <span class="exec">执行人</span>
+                    <div class="name">
+                        <a href="">
+                            <input type="text" style="text-align:right;border:0px;color:#909090;width:100px" value="Tina" readonly>
+                            <i class="icon-arrowright" style="color:#909090"></i>
+                        </a>
+                    </div>
+                </li>
+                <li class="executor">
+                    <i class="icon-calendar-fill" style="color:#f6a54f;line-height:45px;margin-left:15px"></i>
+                    <span class="exec">完成日期</span>
+                    <div class="name lon">
+                        <input type="date" style="text-align:right;border:0px;color:#909090;width:171px;line-height:24px;" value="2016-03-08">
+                        <i class="icon-arrowright"></i>
+                    </div>
+                </li>
+                <li class="executor">
+                    <i class="icon-time" style="color:#f6a54f;line-height:45px;margin-left:15px"></i>
+                    <span class="exec">完成时间</span>
+                    <div class="name">
+                        <input type="time" style="text-align:right;border:0px;color:#909090;width:100px" value="17:18">
+                        <i class="icon-arrowright"></i>
+                    </div>
+                </li>
+            </ul>
+            <div class="radius-fin">
+                <a class="radius-bo">创建任务</a>
+            </div>
+        </article>
+	</section>
+    <script src="plugin/jquery/jquery.min.js"></script>
+    <script src="plugin/seedsui/seedsui.min.js"></script>
+    <script>
+        var c;
+        var actionsheet=new Actionsheet([
+            {
+                text : '拍照',
+                handler : function(s){
+                    var t=new Toast("拍照");
+                    t.show();
+                }
+            },{
+                text : '从相册选择',
+                handler : function(s){
+                    var t=new Toast("从相册选择");
+                    t.show();
+                }
+            }
+        ]);
+        $("#actionsheet").click(function(){
+            actionsheet.show();
+        });
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "lightapp-task",
+  "description": "指令",
+  "main": "index.js",
+  "authors": [
+    "pengle"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^2.2.4",
+    "angular": "^1.5.5"
+  },
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular": "^1.5.5"
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轻应用－任务</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="plugin/seedsui/seedsui.min.css">
+    <link rel="stylesheet" href="plugin/animate/animate.css">
+	<link rel="stylesheet" href="css/task-detail.76229648.css">
+</head>
+<body>
+	<section id="pageSignList" class="active">
+		<header>
+           <div class="titlebar" style="z-index:99;">
+                <a class="left" href="javascript:history.go(-1)">
+                    <i class="icon-arrowleft"></i>
+                    <span>返回</span>
+                </a>
+                <h1 class="text-center">任务详情</h1>
+            </div>
+        </header>
+        <article style="top:44px;bottom:0px;">
+            <div class="content padding16 cre-img">
+                <div class="cont-tip">
+                    <span class="cont-tip-new1"><img src="img/icon/clock.9e21352e.png">已超期</span>
+                </div>
+                <div class="user-info box-flex-1">
+                    <a class="icon-name" style="background-color: #10ce76;border-color: #10ce76;">
+                        S
+                    </a> 
+                    <div class="info box">
+                        <div class="name">Shirley</div>
+                        <div class="status orange">截止时间：2016-03-08 17:30</div>
+                    </div>
+                </div>
+                <div class="details-all">
+                    <div class="row new">
+                        <span class="cont">文档完成输出，原型及效果图设计，逻辑</span>
+                    </div>
+                    <div class="details">
+                        <div class="show-imgs" style="background-image:url(img/icon/test1.22433305.png)">               
+                        </div>
+                        <div class="show-imgs new" id="actionsheet" style="background-image:url(img/icon/addimg.cfc58949.png)">
+                        </div>
+                    </div>
+                </div>
+                <div class="create-time">
+                    <label>创建时间：2016-02-21 17:30</label>
+                </div>
+            </div>
+            <div class="executor">
+                <i class="icon-person-fill" style="color:#36ac72;line-height:45px;margin-left:15px"></i>
+                <span class="exec">指派人</span>
+                <span class="name">Tony</span>
+            </div>        
+            <ul style="position:relative;top:20px;">
+                <li>
+                    <span class="time-all">2016-01</span>
+                    <div class="main-cont-all">
+                        <div class="main-cont">
+                            <div class="circle1"></div>
+                            <div class="content1">创建需求文档，发送邮件告知项目相关人员</div>
+                            <div class="time">01-14&nbsp;&nbsp;&nbsp;08:30</div>
+                        </div>
+                        <div class="main-cont">
+                            <div class="circle1"></div>
+                            <div class="content1">开会讨论并分配任务</div>
+                            <div class="time">01-05&nbsp;&nbsp;&nbsp;13:30</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="radius-fin">
+                <button class="radius-bo orange" id="actionsheet">提醒他一下</button>
+            </div>
+        </article>
+	</section>
+    <script src="plugin/jquery/jquery.min.js"></script>
+    <script src="plugin/seedsui/seedsui.min.js"></script>
+    <script>
+        function showBlog(){
+            $("#blog").slideToggle();
+            document.getElementById('cont-open').style.display = "none";
+            document.getElementById('cont-close').style.display = "block";
+        }
+        function closeBlog(){
+            $("#blog").slideToggle();
+            document.getElementById('cont-open').style.display = "block";
+            document.getElementById('cont-close').style.display = "none";
+        }
+        var c;
+        var actionsheet=new Actionsheet([
+            {
+                text : 'IM提醒',
+                handler : function(s){
+                    var t=new Toast("IM提醒");
+                    t.show();
+                }
+            },{
+                text : '电话通知',
+                handler : function(s){
+                    var t=new Toast("电话通知");
+                    t.show();
+                }
+            }
+        ]);
+        $("#actionsheet").click(function(){
+            actionsheet.show();
+        });
+	</script>
+</body>
+</html>
